@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAKEUP ASSIGNMENT</title>
+<style>
+    body{ background-color: lightblue;}
+    .question {
+    margin-bottom: 10px;
+    }
+
+    #butt{ border: 2px solid black;
+            border-radius: 7px;
+            width: 150px;
+            height: 50px;
+        }
+
+    p{ font-weight: bold;}
+
+</style>
+</head>
+<body>
+
+<div class="question">
+  <p>1. Who is making the web standards?</p>
+  <input type="radio" name="q1" value="5"> The world wide web consortium<br>
+  <input type="radio" name="q1" value="0"> Mozilla<br>
+  <input type="radio" name="q1" value="0"> Google<br>
+  <input type="radio" name="q1" value="0"> Microsoft<br>
+</div>
+
+<div class="question">
+  <p>2. Choose the correct HTML element for the largest heading:</p>
+  <input type="radio" name="q2" value="0"> &lt; heading  &gt; <br>
+  <input type="radio" name="q2" value="5"> &lt; h1 &gt; <br>
+  <input type="radio" name="q2" value="0"> &lt; h6  &gt;<br>
+  <input type="radio" name="q2" value="0"> &lt; head &gt; <br>
+</div>
+
+<div class="question">
+    <p> 3. Inline elements are normally displayed without starting a new line.</p>
+    <input type="radio" name="q3" value="5">  True <br>
+    <input type="radio" name="q3" value="0">  False <br>
+  </div>
+
+  <div class="question">
+    <p>4. How do you make a bulleted list? </p>
+    <input type="radio" name="q4" value="0"> &lt; dl  &gt; <br>
+    <input type="radio" name="q4" value="5"> &lt; ul &gt; <br>
+    <input type="radio" name="q4" value="0"> &lt; ol  &gt;<br>
+    <input type="radio" name="q4" value="0"> &lt; list &gt; <br>
+  </div>
+
+  <div class="question">
+    <p> 5. What does HTML stand for? </p>
+    <input type="radio" name="q5" value="0"> Hyperlinks and Text Markup Language <br>
+    <input type="radio" name="q5" value="5"> Hyper Text Markup Language <br>
+    <input type="radio" name="q5" value="0"> Home Tool Markup Language<br>
+  </div>
+
+<button onclick="calculateMarks()" id="butt"> <b>Result<b></button>
+
+<p>Total Marks: <span id="totalMarks">0</span></p>
+
+<script>
+function calculateMarks() {
+  let totalMarks = 0;
+  
+  // Get the selected value for each question and calculate total marks
+  const questions = document.querySelectorAll('.question');
+  questions.forEach(question => {
+    const selectedOption = question.querySelector('input[type="radio"]:checked');
+    if (selectedOption) {
+      totalMarks += parseInt(selectedOption.value);
+    }
+  });
+
+  // Display total marks
+  document.getElementById('totalMarks').textContent = totalMarks;
+}
+</script>
+
+</body>
+</html>
